@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="public/css/lite.core.min.css">
+  <title>LiteCoreJS Demo</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+    }
+
+    .page_wrapper {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #1a1a1a;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #007bff;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    input{
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #007bff;
+      background: #f0f8ff;
+      outline: none;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    .btn-success {
+      background: #28a745;
+    }
+
+    .btn-success:hover {
+      background: #218838;
+    }
+
+    .input-error {
+      font-size: 13px;
+      color: red;
+      display: none;
+    }
+
+    .sound-section {
+      margin-top: 20px;
+    }
+
+    ::placeholder {
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page_wrapper">
+    <h1>LiteCoreJS Demo</h1>
+
+    <!-- Email Section -->
+    <div class="section">
+      <h2>Email Validation</h2>
+      <div class="form-group">
+        <input type="text" id="email" placeholder="Enter email">
+      </div>
+      <button class="btn" onclick="validate()">Validate Email</button>
+    </div>
+
+    <!-- User Input Section -->
+    <div class="section">
+      <h2>User Input</h2>
+      <div class="form-group">
+        <input type="text" nospace-input id="userName" placeholder="Enter your name">
+        <small class="input-error">❌ Cannot start with a space</small>
+      </div>
+      <div class="form-group">
+        <input type="number"  placeholder="Enter number">
+      </div>
+      <div class="form-group">
+        <input type="tel" phone-input placeholder="Enter phone number">
+      </div>
+    </div>
+
+    <!-- Modal Section -->
+    <div class="section">
+      <h2>Modal Display</h2>
+      <button class="btn" onclick="liteCoreJS.showModal('Title', 'This is a modal!')">Show Modal</button>
+    </div>
+
+    <!-- Sound Section -->
+    <div class="section sound-section">
+      <h2>Sound Effects</h2>
+      <button class="btn btn-success" onclick="liteCoreJS.playSoundSuccess()">Sound Success</button>
+    </div>
+  </div>
+
+  <script type="module" src="index.js"></script>
+  <script>
+    function validate() {
+      const email = document.getElementById('email').value;
+      const isValid = liteCoreJS.validateEmail(email);
+      alert(isValid ? 'Valid email ✅' : 'Invalid email ❌');
+    }
+  </script>
+</body>
+
+</html>

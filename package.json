@@ -1,0 +1,27 @@
+{
+  "name": "litecorejs",
+  "version": "1.0.0",
+  "description": "Lightweight core JS utilities for input validation, modals, and sound.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "javascript",
+    "utility",
+    "modal",
+    "validation",
+    "sound"
+  ],
+  "author": "tivDev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tivDev/litecorejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tivDev/litecorejs/issues"
+  },
+  "homepage": "https://github.com/tivDev/litecorejs#readme"
+}
